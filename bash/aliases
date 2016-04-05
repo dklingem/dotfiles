@@ -1,0 +1,20 @@
+alias v='vim'
+alias nv='nvim'
+alias vrc='nvim ~/.vimrc'
+alias brc='nvim ~/.dotfiles/bash/bashrc'
+alias taildevlog='tail -f log/development.log | grcat ~/.grc/conf.rails.log'
+alias tailtestlog='tail -f log/test.log | grcat ~/.grc/conf.rails.log'
+
+# ROXIMITY ALIASES
+alias dash='cd ~/dev/roximity/dashboard/'
+alias controller='cd ~/dev/roximity/controller/'
+alias mm='cd ~/dev/roximity/middleman/'
+
+# GIT ALIASES
+alias gs='git status'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gcam='git commit -am'
+alias gd='git diff'
+alias gru='git remote update'
