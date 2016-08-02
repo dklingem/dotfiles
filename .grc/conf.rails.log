@@ -1,0 +1,31 @@
+# this configuration file is suitable for displaying rails log files
+# example: tail -f log/development.log | grcat ~/.grc/conf.rails.log
+
+# Highlight request url bold white 
+regexp=(?<=^Started\s(GET|PUT|OST|ETE)\s")(.*?)(?=\?)
+colours=bold white
+======
+
+# Highlight request type green 
+regexp=(?<=Started\s)(PUT|PATCH|GET|POST|DELETE)\s
+colours=green
+======
+
+# If response code is 200 class then highlight response code bold green
+regexp=(?<=Completed)\s2\d{2}\s
+colours=bold green
+======
+
+# If response code is 300 class then highlight response code yellow
+regexp=(?<=Completed)\s3\d{2}\s
+colours=yellow
+======
+
+# If response code is not 200 class then highlight entire line red
+regexp=Completed\s[^(2|3)]\d{2}\s.+$
+colours=red
+======
+
+# Highlight request parameters magenta 
+regexp=(?<=Parameters:\s)\{.*\}
+colours=magenta
