@@ -17,11 +17,19 @@ Plug 'airblade/vim-gitgutter'
 " Colors
 Plug 'nanotech/jellybeans.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'digitaltoad/vim-pug'
 
 " Clojure
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-fireplace'
+
+" React
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" API Blueprint
+"Plug 'kylef/apiblueprint.vim'
 
 call plug#end()
 
@@ -51,9 +59,13 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore "**/*.pyc"
       \ -g ""'
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|tmp)$'
-  \ }
+"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(swp|ico|git|svn))$'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif
+
+" use jsx highlighting for .js files too
+let g:jsx_ext_required = 0
 
 " jump to the last position when reopening a file
 if has("autocmd")
